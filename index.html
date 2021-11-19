@@ -62,12 +62,6 @@
         // Prediction 2: run input through teachable machine classification model
         const prediction = await model.predict(posenetOutput);
         
-        if(prediction[1].probability.toFixed(2)==1.00){
-            <audio src="audio/magic.mp3" autoplay controls>
-                브라우저가 오디오를 지원하지 않습니다.
-            </audio>
-        }
-
         for (let i = 0; i < maxPredictions; i++) {
              const classPrediction = //percentage
                  prediction[i].className + ": " + prediction[i].probability.toFixed(2);
